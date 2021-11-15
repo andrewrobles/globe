@@ -24,14 +24,69 @@ placemarkAttributes.labelAttributes.offset = new WorldWind.Offset(
             WorldWind.OFFSET_FRACTION, 0.5,
             WorldWind.OFFSET_FRACTION, 1.0);
 
-placemarkAttributes.imageSource = WorldWind.configuration.baseUrl + "images/pushpins/plain-red.png";
+placemarkAttributes.imageSource = WorldWind.configuration.baseUrl + "images/white-dot.png";
+placemarkAttributes.imageScale = 0.2
 
-var position = new WorldWind.Position(55.0, -106.0, 100.0);
-var placemark = new WorldWind.Placemark(position, false, placemarkAttributes);
 
-placemark.label = "Placemark\n" +
-    "Lat " + placemark.position.latitude.toPrecision(4).toString() + "\n" +
-    "Lon " + placemark.position.longitude.toPrecision(5).toString();
-placemark.alwaysOnTop = true;
+function drawPlacemark(latitude, longitude, altitude) {
+    var position = new WorldWind.Position(latitude, longitude, altitude);
+    var placemark = new WorldWind.Placemark(position, false, placemarkAttributes);
+    
+    // placemark.label = "Placemark\n" +
+    //     "Lat " + placemark.position.latitude.toPrecision(4).toString() + "\n" +
+    //     "Lon " + placemark.position.longitude.toPrecision(5).toString();
+    placemark.alwaysOnTop = true;
+    
+    placemarkLayer.addRenderable(placemark);
+}
 
-placemarkLayer.addRenderable(placemark);
+placemarks = [
+    {
+        latitude: 30.0,
+        longitude: -150.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -145.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -140.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -135.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -130.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -125.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -120.0,
+        altitude: 100.0
+    },
+    {
+        latitude: 30.0,
+        longitude: -115.0,
+        altitude: 100.0
+    }
+]
+
+for (var i = 0; i < placemarks.length; i++) {
+    drawPlacemark(
+        placemarks[i].latitude,
+        placemarks[i].longitude,
+        placemarks[i].altitude
+    )
+}
