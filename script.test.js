@@ -1,7 +1,7 @@
 const { expect } = require('@jest/globals');
 const parse = require('./script');
 
-test('adds 1 + 2 to equal 3', () => {
+test('parse raw text', () => {
   const rawText = `Latitude,Longitude,Altitude
   30,-150,100
   `
