@@ -1,0 +1,42 @@
+[
+    {
+        "latitude": 30.0,
+        "longitude": -150.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -145.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -140.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -135.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -130.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -125.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -120.0,
+        "altitude": 100.0
+    },
+    {
+        "latitude": 30.0,
+        "longitude": -115.0,
+        "altitude": 100.0
+    }
+]

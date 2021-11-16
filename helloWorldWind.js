@@ -83,10 +83,26 @@ placemarks = [
     }
 ]
 
-for (var i = 0; i < placemarks.length; i++) {
-    drawPlacemark(
-        placemarks[i].latitude,
-        placemarks[i].longitude,
-        placemarks[i].altitude
-    )
-}
+function previewFile() {
+    const content = document.querySelector('.content');
+    const [file] = document.querySelector('input[type=file]').files;
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", () => {
+      // this will then display a text file
+      var contents = reader.result;
+      var placemarks = JSON.parse(contents)
+      for (var i = 0; i < placemarks.length; i++) {
+        drawPlacemark(
+            placemarks[i].latitude,
+            placemarks[i].longitude,
+            placemarks[i].altitude
+        )
+      }
+    }, false);
+  
+    if (file) {
+      reader.readAsText(file);
+    }
+  }
+
