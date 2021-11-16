@@ -9,9 +9,9 @@ function parse(rawText) {
     for (var i = 1; i < lines.length; i++) {
         const elements = lines[i].split(',')
         data.push({
-            latitude: elements[0],
-            longitude: elements[1],
-            altitude: elements[2]
+            latitude: parseInt(elements[0].trim()),
+            longitude: parseInt(elements[1].trim()),
+            altitude: parseInt(elements[2].trim())
         })
     }
     return data

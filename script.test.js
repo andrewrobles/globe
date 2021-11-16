@@ -3,8 +3,7 @@ const parse = require('./script');
 
 test('parse raw text', () => {
   const rawText = `Latitude,Longitude,Altitude
-  30,-150,100
-  `
+  30,-150,100`
 
   const actual = parse(rawText)
   const expected = [
@@ -15,5 +14,5 @@ test('parse raw text', () => {
     }
   ]
 
-  expect(actual).toBe(expected);
+  expect(actual).toStrictEqual(expected);
 });
